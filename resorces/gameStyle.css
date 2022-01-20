@@ -1,0 +1,79 @@
+body{
+    background-color: indianred;
+}
+.title{
+    font-size: 100px;
+    color: blanchedalmond;
+    margin: 50px auto;
+    text-align: center;
+}
+ h2{
+    font-size: 50px;
+    color: blanchedalmond;
+    margin: auto;
+    text-align: center;
+}
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 472px;
+    height: 300px;
+    margin: 20px auto 200px auto;
+   
+}
+
+.grid2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 572px;
+    height: 400px;
+    margin: 100px auto;  
+    display: none; 
+}
+.grid3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 672px;
+    height: 500px;
+    margin: 100px auto;   
+    display: none;
+}
+
+.container h3{
+    text-align: center;
+    margin: 50px auto;
+    color: rgb(228, 214, 228);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+.row{
+    margin: auto;
+}
+.col{
+    max-width: 300px;
+}
+.container span{
+    text-align: center;
+    margin-left: 10px;
+    color: rgb(228, 205, 228);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+#won{
+    background-image: url('./gameImages/tenor.gif');
+    display: none;
+    width: 472px;
+    height: 500px;
+    margin: 100px auto;
+}
+#lostgif{
+    background-image: url('./gameImages/lost.gif');
+    display: none;
+    width: 472px;
+    height: 500px;
+    margin: 100px auto;
+}
+#final{
+    display: none;
+}
