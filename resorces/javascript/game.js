@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () =>{
     //level 1 --- 6*2 images
     const cardsArray = [
@@ -266,6 +268,17 @@ document.addEventListener('DOMContentLoaded', () =>{
         },
 
     ];
+
+ 
+    const modal1 = document.getElementById('modal-1');
+    const fader = document.getElementById('fader');
+    const butt = document.getElementById('hide');
+     butt.addEventListener('click', function(){
+         modal1.style.display="none"
+         fader.style.display="none"  
+        });
+     
+
     cardsArray.sort(()=>0.5 - Math.random());
     cardsArray2.sort(()=>0.5 - Math.random());
     cardsArray3.sort(()=>0.5 - Math.random());
@@ -287,11 +300,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     let cardsWon =[];
     let cardLost =[];
 
-
+   
+   
+       
 
   
-    
+ 
     function CreateABoard(){
+        
         level.textContent="Level 1"
         for(let i = 0; i < cardsArray.length; i++){//loop througth array
             var card = document.createElement('img')//create an img html tag
@@ -306,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     function checkformatch(){
      
         var cards = document.querySelectorAll('img')
-        
         const opt1id = cardsChosId[0];
         const opt2id = cardsChosId[1];
         if(cardsChos[0] === cardsChos[1]){
@@ -323,18 +338,17 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
         cardsChos = [];
        cardsChosId = [];
-       lose.textContent =`Lost: ${cardLost.length}`;
-       resultDisplay.textContent =`Won: ${cardsWon.length}`;
+       lose.textContent =`Attempts: ${cardLost.length}`;
+       resultDisplay.textContent =`Matches: ${cardsWon.length}`;
        if(cardsWon.length == cardsArray.length/2){ 
            localStorage.setItem('winningPoints', cardsWon.length) 
-           localStorage.setItem('lostPoints', cardLost.length)       
-          //level 2
-          CreateABoard2()
-         
-       }
+           localStorage.setItem('lostPoints', cardLost.length)
+                //level 2
+             CreateABoard2()
+        
       }
-   
-      //flip your card
+    }
+      //flip your card level 1
   
       function flipCard(){
           var cardId = this.getAttribute('data-id');
@@ -345,11 +359,12 @@ document.addEventListener('DOMContentLoaded', () =>{
               setTimeout(checkformatch, 500);
           }
       }
-
+//different arrays for different level 
       let cardsChos2 = [];
       let cardsChosId2 = [];
       let cardsWon2 = [];
       let cardsLost2 = [];
+      //level 2 starts here
     function CreateABoard2(){
     
         grid2.style.display="block";
@@ -386,8 +401,8 @@ document.addEventListener('DOMContentLoaded', () =>{
           }
         cardsChos2 = [];
        cardsChosId2 = [];
-       lose.textContent =`Lost: ${cardsLost2.length}`;
-       resultDisplay.textContent =`Won: ${cardsWon2.length}`;
+       lose.textContent =`Attempts: ${cardsLost2.length}`;
+       resultDisplay.textContent =`Matches: ${cardsWon2.length}`;
        if(cardsWon2.length == cardsArray2.length/2){  
         localStorage.setItem('winningPoints2', cardsWon2.length) 
         localStorage.setItem('lostPoints2', cardsLost2.length)         
@@ -395,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         CreateABoard3()
        }
       }
-         //flip your card
+         //flip your card leve 2
   
          function flipCard2(){
             var cardId = this.getAttribute('data-id-2');
@@ -408,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
 
 
-
+//level 3 starts here
         let cardsChos3 = [];
         let cardsChosId3 = [];
         let cardsWon3 =[];
@@ -450,8 +465,8 @@ document.addEventListener('DOMContentLoaded', () =>{
           }
         cardsChos3 = [];
        cardsChosId3 = [];
-       lose.textContent =`Lost: ${cardsLost3.length}`;
-       resultDisplay.textContent =`Won: ${cardsWon3.length}`;
+       lose.textContent =`Attempts: ${cardsLost3.length}`;
+       resultDisplay.textContent =`Matches: ${cardsWon3.length}`;
        if(cardsWon3.length == cardsArray3.length/2){
         localStorage.setItem('winningPoints3', cardsWon3.length) 
         localStorage.setItem('lostPoints3', cardsLost3.length)   
@@ -467,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             setTimeout(checkformatch3, 500);
         }
     }
+    //calculating final score with the local storage
     function finalScore(){
        
      
@@ -481,16 +497,32 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         finalS.style.display="block";
         finalS.style.textAlign="center";
-        if(finalSW > finalSL){
-            finalS.textContent = `Well done mate you won: ${finalSW} against ${finalSL}`
+        if(finalSL == 31){
+            finalS.textContent = `Superb!! your matches are: ${finalSW} and your attempts are ${finalSL}`
             lose.style.display = "none";
             resultDisplay.style.display = "none";
             won.style.display="block";
             grid3.style.display="none";
             
         }
-        else if(finalSL > finalSW){
-            finalS.textContent = `I am sorry mate you lost: ${finalSL} and won: ${finalSW}`
+        else if(finalSL > 31 && finalSL <= 50){
+            finalS.textContent = `Awesome!! your matches are: ${finalSW} and your attempts are ${finalSL}`
+            lose.style.display = "none";
+            resultDisplay.style.display = "none";
+            won.style.display="block";
+            grid3.style.display="none";
+            
+        }
+        else if(finalSL > 50 && finalSL < 64){
+            finalS.textContent = `Very Good!! your matches are: ${finalSW} and your attempts are ${finalSL}`
+            lose.style.display = "none";
+            resultDisplay.style.display = "none";
+            won.style.display="block";
+            grid3.style.display="none";
+            
+        }
+        else if(finalSL >= 65){
+            finalS.textContent = `Practice makes you perfect, have another go!!!. Your attempts are: ${finalSL} and your matches are: ${finalSW}`
             lostgif.style.display="block";
             grid3.style.display="none";
         }
@@ -500,10 +532,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     CreateABoard();
       
     localStorage.clear();
-    
-     
-      
-       
-      
-  
+         
+
 })

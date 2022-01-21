@@ -13,13 +13,32 @@
 <body>
    
   
+    <div  id="modal-1" class="modal-window">
+        <h2>Roles</h2>
+        <br>The Game is divided in 3 different levels.<br> 
+        --first Level: easy,<br>
+         --second level: medium,<br>
+         --third level difficult. <br> 
+         For each two matching cards collect 1 matching point,
+          for each attempt collect 1 attempt.<br>
+         if  at the end of the game, More specifically, at the third level,
+         your attempts are more then 65, you have done too many attempts, 
+         therefore you have lost the game.<br>
+         --If your attempts are equal to 31 you have done a Superb job.<br>
+         --if your attempts are in between 31 nad 50 you done awesome,<br> 
+         --if your attempts are between 45 and less then 65 you done well enough</p>
+        <button id="hide" class="modal-btn modal-hide">Understood</button>
+    </div>
+   
+    <div id="fader" class="modal-fader"></div>
 <div class="container">
     <h1 class="title">Memory Game</h1>
+   
     <h2 id="level"></h2>
     <div class="row">
         
-            <h3 id="result" class="col">Won:</h3>
-            <h3 id="lose" class="col">Lost:</h3>       
+    <h3 id="result" class="col">Matches:</h3>
+    <h3 id="lose" class="col">Attempts:</h3>       
     </div> 
     <h3 id="final" class="col">Final Score:</h3>
    <!-- level 1 -->
