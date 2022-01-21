@@ -355,40 +355,58 @@ document.addEventListener('DOMContentLoaded', () =>{
       
         var box = document.createElement("div")  
         var backg = document.createElement("div") 
-        var h2 = document.createElement("h3");
-        var p = document.createElement("p");
+        var h3 = document.createElement("h3");
+        var no = document.createElement("button");
         var yes = document.createElement("button");
         yes.innerHTML = "Yes";
-        p.innerHTML = "if No just close the page";
+        no.innerHTML = "No";
         yes.onclick = function() { document.body.removeChild(this.parentNode); backg.style.display="none" }
-       
-         h2.innerText = "Do you wish to continue to the next level?";
+        no.onclick = function(){goodbye()}
+         h3.innerText = "Do you wish to continue to the next level?";
       
-        box.appendChild(h2)
-        box.appendChild(p);
+        box.appendChild(h3)
+        box.appendChild(no);
         box.appendChild(yes);
        
         // Style box
         box.style.position = "absolute"; 
         box.style.width = "400px";
-        box.style.height = "200px";
+        box.style.height = "100px";
         
         // Center box.
         box.style.center = (window.innerWidth / 2) -100;
-        box.style.top = "500px";
+        box.style.top = "300px";
         //Button style
         yes.className="modal-btn"
         yes.style.float="right"
         //p element style
-        p.style.float="left"
+        no.style.float="left"
+        no.className="modal-btn"
         //style h3 element
-        h2.style.float="clear";
-        h2.style.marginBottom="50px";
+        h3.style.float="clear";
+        h3.style.marginBottom="10px";
         // Append box to body
         document.body.appendChild(box).className="modal-window";
         document.body.appendChild(backg).className="modal-fader";
     
       }
+      function goodbye(){
+        var box = document.createElement("div")
+        var h2 = document.createElement("h2");
+        h2.innerHTML = "We are sorry to say GoodBye";
+        box.appendChild(h2)
+         // Style box
+         box.style.position = "absolute"; 
+         box.style.width = "600px";
+         box.style.height = "400px";
+         
+         // Center box.
+         box.style.center = (window.innerWidth / 2) -100;
+         box.style.top = "300px";
+          // Append box to body
+          document.body.appendChild(box).className="modal-window";
+          document.body.appendChild(backg).className="modal-fader"; 
+       }
       //flip your card level 1
   
       function flipCard(){
@@ -536,9 +554,11 @@ document.addEventListener('DOMContentLoaded', () =>{
        let l3L = localStorage.getItem('lostPoints3');
        let finalSW = parseInt(l1W) + parseInt(l2W) +parseInt(l3W);
        let finalSL = parseInt(l1L) + parseInt(l2L) + parseInt(l3L);
-
+          
         finalS.style.display="block";
         finalS.style.textAlign="center";
+        lose.style.display="none"
+        resultDisplay.style.display="none";
         if(finalSL == 31){
             finalS.textContent = `Superb!! your matches are: ${finalSW} and your attempts are ${finalSL}`
             lose.style.display = "none";
@@ -572,7 +592,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   
     CreateABoard();
-      
     localStorage.clear();
          
 
