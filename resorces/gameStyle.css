@@ -6,23 +6,11 @@ body{
     color: rgb(241, 211, 201);
     text-align: center;
 }
-.grid{
+.grid, .grid2, .grid3{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.grid2{
-    display: flex;
-    flex-wrap: wrap;
-    display: none; 
-    justify-content: center;
-}
-.grid3{
-    display: flex;
-    flex-wrap: wrap;
-    display: none;
-    justify-content: center;
+    align-content: center;
 }
 
 
@@ -292,7 +280,7 @@ body{
         padding: 5px;
     } 
     img{
-        width: 60px;
+        width: 80px;
     }
     #won, #lostgif{
         margin: 100px auto;

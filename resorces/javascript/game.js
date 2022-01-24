@@ -307,7 +307,8 @@ document.addEventListener('DOMContentLoaded', () =>{
   
  
     function CreateABoard(){
-        
+        grid3.style.display="none";
+        grid2.style.display="none";
         level.textContent="Level 1"
         for(let i = 0; i < cardsArray.length; i++){//loop througth array
             var card = document.createElement('img')//create an img html tag
@@ -432,7 +433,8 @@ document.addEventListener('DOMContentLoaded', () =>{
    
     function CreateABoard2(){
     
-        grid2.style.display="block";
+        grid2.style.display="flex";
+        grid3.style.display="none";
         grid.style.display="none";
         level.textContent="Level 2"
         for(let i = 0; i < cardsArray2.length; i++){//loop througth array
@@ -502,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () =>{
      
     function CreateABoard3(){
     
-        grid3.style.display="block";
+        grid3.style.display="flex";
         grid.style.display="none";
         grid2.style.display="none";
         level.textContent="Level 3"
@@ -605,7 +607,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
       
     }
-  
     CreateABoard();
     localStorage.clear();
          
