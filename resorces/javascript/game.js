@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         var cards = document.querySelectorAll('img')
         const opt1id = cardsChosId[0];
         const opt2id = cardsChosId[1];
-        if(cardsChos[0] === cardsChos[1]){
+        if(cardsChos[0] === cardsChos[1] && opt1id !== opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt1id].removeEventListener("click", flipCard, false);
@@ -336,6 +336,11 @@ document.addEventListener('DOMContentLoaded', () =>{
           cardLost.push(cardsChos);
       
         }
+        else if(opt1id===opt2id||opt2id===opt2id){
+            cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
+            cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
+        
+          }
         cardsChos = [];
        cardsChosId = [];
        lose.textContent =`Attempts: ${cardLost.length}`;
@@ -351,7 +356,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   
     function promptWindow() {
-        // Create template
       
         var box = document.createElement("div")  
         var backg = document.createElement("div") 
@@ -390,6 +394,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         document.body.appendChild(backg).className="modal-fader";
     
       }
+      //GoodBye function
       function goodbye(){
         var box = document.createElement("div")
         var h2 = document.createElement("h2");
@@ -418,12 +423,13 @@ document.addEventListener('DOMContentLoaded', () =>{
               setTimeout(checkformatch, 500);
           }
       }
+ //level 2 starts here
 //different arrays for different level 
       let cardsChos2 = [];
       let cardsChosId2 = [];
       let cardsWon2 = [];
       let cardsLost2 = [];
-      //level 2 starts here
+   
     function CreateABoard2(){
     
         grid2.style.display="block";
@@ -444,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         var cards = document.querySelectorAll('.grid2 img')
         const opt1id = cardsChosId2[0];
         const opt2id = cardsChosId2[1];
-        if(cardsChos2[0] === cardsChos2[1]){ 
+        if(cardsChos2[0] === cardsChos2[1]&& opt1id !== opt2id){ 
             
             cards[opt1id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/white.png')
@@ -456,6 +462,11 @@ document.addEventListener('DOMContentLoaded', () =>{
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
             cardsLost2.push(cardsChos2);
+        
+          }
+          else if(opt1id===opt2id||opt2id===opt2id){
+            cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
+            cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
         
           }
         cardsChos2 = [];
@@ -510,17 +521,21 @@ document.addEventListener('DOMContentLoaded', () =>{
         var cards = document.querySelectorAll('.grid3 img')
         const opt1id = cardsChosId3[0];
         const opt2id = cardsChosId3[1];
-        if(cardsChos3[0] === cardsChos3[1]){
+        if(cardsChos3[0] === cardsChos3[1]&& opt1id !== opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt1id].removeEventListener("click", flipCard3, false);
             cards[opt2id].removeEventListener("click", flipCard3, false);
-       
             cardsWon3.push(cardsChos3);
         } else if(cardsChos3[0] !== cardsChos3[1]){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
             cardsLost3.push(cardsChos3);
+        
+          }
+          else if(opt1id===opt2id||opt2id===opt2id){
+            cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
+            cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
         
           }
         cardsChos3 = [];
