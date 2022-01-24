@@ -3,88 +3,65 @@ body{
 }
 
  h2{
-    font-size: 50px;
     color: rgb(241, 211, 201);
-    margin: 50px auto;
     text-align: center;
 }
 .grid{
     display: flex;
     flex-wrap: wrap;
-    width: 472px;
-    height: 300px;
-    margin: 10px auto;
     justify-content: center;
 }
 
 .grid2{
     display: flex;
     flex-wrap: wrap;
-    width: 572px;
-    height: 400px;
     display: none; 
-    margin: 10px auto;
     justify-content: center;
 }
 .grid3{
     display: flex;
     flex-wrap: wrap;
-    width: 672px;
-    height: 500px;
     display: none;
-    margin: 10px auto;
     justify-content: center;
 }
 
 
  
    h3, h4{
-    margin: 50px auto;
     color: rgb(248, 245, 244);
     font-family:sans-serif;
     background-color: rgb(241, 211, 201);
-    padding: 10px;
     border-radius: 20px;
 }
 
 .left, .right{
     background-color: rgb(227 166 201 / 82%);
-    font-size: 26px;
 }
-.final{
-    font-size: 30px;
-}
+
 #level, .final{
     color: white;
 }
 .container2{
-    width: 672px;  
     background-color:  white;
     margin: 0 auto 100px auto;
     padding: 30px 10px;
     border-radius: 0 0 20px 20px;
 }
 .container{
-    width: 672px;
     display: flex;
     background-color: rgb(129 2 51 / 56%);
     border-radius: 20px 20px 0 0;
-    margin:100px auto 0 auto;
     padding: 10px;
 }
 #won{
     background-image: url('./gameImages/tenor.gif');
     display: none;
-    width: 472px;
     height: 500px;
-    margin: 100px auto;
 }
 #lostgif{
     background-image: url('./gameImages/lost.gif');
     display: none;
-    width: 472px;
     height: 500px;
-    margin: 100px auto;
 }
 #final, #modal-2{
     display: none;
@@ -135,6 +112,56 @@ body{
     text-decoration: none;
 }
 @media(min-width: 701px){
+   
+    
+     h2{
+        margin: 40px auto;  
+    }
+    .grid{
+        width: 472px;
+        height: 300px;
+        margin: 10px auto;
+    }
+    
+    .grid2{    
+        width: 572px;
+        height: 400px;
+        margin: 10px auto;
+    }
+    .grid3{
+        width: 672px;
+        height: 500px;
+    }
+    h2{
+        font-size: 50px;
+        margin: 50px auto;
+    } 
+    h3, h4{
+        margin: 50px auto;
+        padding: 10px;
+    }
+      
+    
+    .left, .right{
+        font-size: 26px;
+    }
+    .final{
+        font-size: 30px;
+    }
+  
+    .container2{
+        width: 672px;  
+        margin: 0 auto 100px auto;
+    }
+    .container{
+        width: 672px;
+        margin:100px auto 0 auto;
+    }
+    #won, #lostgif{
+        width: 472px;
+        margin: 100px auto;
+    }
+    
     .modal-window {
         left: 50%;
         position: absolute;
@@ -142,11 +169,133 @@ body{
         width: 600px;
     }   
 }
-@media(max-width: 700px){
+@media(max-width: 700px) and (min-width: 600px){
     .modal-window {
-        left: 95%;
+        left: 50%;
         position: absolute;
         top: 50px;
         width: 90%;
-    }   
+    }  
+    .container2{
+        width: 550px;  
+        margin: 0 auto 100px auto;
+    }
+    .container{
+        width: 550px;
+        margin:100px auto 0 auto;
+    } 
+    .grid{
+        width: 472px;
+        height: 300px;
+        margin: 10px auto;
+    }
+    
+    .grid2{      
+        width: 572px;
+        height: 400px;
+        margin: 10px auto;
+    }
+    .grid3{
+        width: 599px;
+        height: 500px;
+    }
+    h3, h4{
+        margin: 50px auto;
+        padding: 10px;
+    }
+    .left, .right{
+        font-size: 26px;
+    }
+    .final{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 50px;
+        margin: 50px auto;
+    } 
+    
+    #won, #lostgif{
+        width: 472px;
+        margin: 100px auto;
+    }
+}
+
+
+@media(max-width: 599px) and (min-width: 425px){
+    .modal-window {
+        left: 50%;
+        position: absolute;
+        top: 50px;
+        width: 90%;
+    }  
+    h3, h4{
+        margin: 50px auto;
+        padding: 5px;
+    }
+    .container2, .container, .grid, .grid2 .grid3,  #won,  #lostgif{
+        width: 100%;  
+    }
+    .container2{
+        margin: 0 auto 100px auto;
+    }
+    .container{
+        margin:100px auto 0 auto;
+    } 
+    .grid, .grid2, .grid3{
+     
+        margin: 10px auto;
+    }
+  
+    .left, .right{
+        font-size: 20px;
+    }
+    .final{
+        font-size: 22px;
+    }
+    h2{
+        font-size: 30px;
+        margin: 50px auto;
+    } 
+    #won, #lostgif{
+        margin: 100px auto;
+    }
+}
+@media(max-width: 424px) and (min-width: 320px){
+    .modal-window {
+        left: 50%;
+        position: absolute;
+        top: 50px;
+        width: 90%;
+    }  
+    .container2, .container, .grid, .grid2 .grid3,  #won,  #lostgif{
+        width: 100%;  
+    }
+    .container2{
+        margin: 0 auto 100px auto;
+    }
+    .container{
+        margin:100px auto 0 auto;
+    } 
+    .grid, .grid2, .grid3{    
+        margin: 10px auto;
+    }
+    
+    .left, .right, .final{
+        font-size: 18px;
+    }
+    h2{
+        font-size: 20px;
+        margin: 50px auto;
+    }
+    h3, h4{
+        margin: 50px auto;
+        padding: 5px;
+    } 
+    img{
+        width: 60px;
+    }
+    #won, #lostgif{
+        margin: 100px auto;
+    }
+   
 }
