@@ -375,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () =>{
        
         // Style box
         box.style.position = "absolute"; 
-        box.style.width = "400px";
         box.style.height = "100px";
         
         // Center box.
@@ -403,9 +402,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         box.appendChild(h2)
          // Style box
          box.style.position = "absolute"; 
-         box.style.width = "600px";
-         box.style.height = "400px";
-         
+       
          // Center box.
          box.style.center = (window.innerWidth / 2) -100;
          box.style.top = "300px";
@@ -437,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         grid3.style.display="none";
         grid.style.display="none";
         level.textContent="Level 2"
-        for(let i = 0; i < cardsArray2.length; i++){//loop througth array
+        for(let i = 0; i < cardsArray2.length; i++){
             var card = document.createElement('img')//create an img html tag
             card.setAttribute('src', 'resorces/gameImages/arrow.png');//set an attribute to the card element
             card.style.border="2px solid white";
@@ -549,6 +546,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         localStorage.setItem('lostPoints3', cardsLost3.length)   
             finalScore()
        }
+
       }
     function flipCard3(){
         var cardId = this.getAttribute('data-id-3');
@@ -576,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         finalS.style.textAlign="center";
         lose.style.display="none"
         resultDisplay.style.display="none";
-        if(finalSL == 31){
+        if(finalSL <= 31){
             finalS.textContent = `Superb!! your matches are: ${finalSW} and your attempts are ${finalSL}`
             lose.style.display = "none";
             resultDisplay.style.display = "none";
@@ -605,8 +603,46 @@ document.addEventListener('DOMContentLoaded', () =>{
             lostgif.style.display="block";
             grid3.style.display="none";
         }
-      
+       promptWindowfinal()
     }
+    function promptWindowfinal() {
+      
+        var box = document.createElement("div")  
+        var backg = document.createElement("div") 
+        var h3 = document.createElement("h3");
+        var no = document.createElement("button");
+        var yes = document.createElement("button");
+        yes.innerHTML = "Yes";
+        no.innerHTML = "No";
+        yes.onclick = function() {location.reload()}
+        no.onclick = function(){goodbye()}
+         h3.innerText = "Do you wish to play again?";
+      
+        box.appendChild(h3)
+        box.appendChild(no);
+        box.appendChild(yes);
+       
+        // Style box
+        box.style.position = "absolute"; 
+        box.style.height = "100px";
+        
+        // Center box.
+        box.style.center = (window.innerWidth / 2) -100;
+        box.style.top = "300px";
+        //Button style
+        yes.className="modal-btn"
+        yes.style.float="right"
+        //p element style
+        no.style.float="left"
+        no.className="modal-btn"
+        //style h3 element
+        h3.style.float="clear";
+        h3.style.marginBottom="10px";
+        // Append box to body
+        document.body.appendChild(box).className="modal-window";
+        document.body.appendChild(backg).className="modal-fader";
+    
+      }
     CreateABoard();
     localStorage.clear();
          

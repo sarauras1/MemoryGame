@@ -42,14 +42,18 @@ body{
     padding: 10px;
 }
 #won{
-    background-image: url('./gameImages/tenor.gif');
-    display: none;
-    height: 500px;
+    background-image: url('./gameImages/tenor.gif'); 
 }
 #lostgif{
     background-image: url('./gameImages/lost.gif');
+}
+#lostgif, #won{
     display: none;
-    height: 500px;
+    width: 100%;
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #final, #modal-2{
     display: none;
@@ -146,7 +150,7 @@ body{
         margin:100px auto 0 auto;
     }
     #won, #lostgif{
-        width: 472px;
+        width: 672px;
         margin: 100px auto;
     }
     
@@ -203,7 +207,7 @@ body{
     } 
     
     #won, #lostgif{
-        width: 472px;
+        width: 599px;
         margin: 100px auto;
     }
 }
@@ -221,7 +225,7 @@ body{
         padding: 5px;
     }
     .container2, .container, .grid, .grid2 .grid3,  #won,  #lostgif{
-        width: 100%;  
+        width: 90%;  
     }
     .container2{
         margin: 0 auto 100px auto;
@@ -256,7 +260,7 @@ body{
         width: 90%;
     }  
     .container2, .container, .grid, .grid2 .grid3,  #won,  #lostgif{
-        width: 100%;  
+        width: 90%;  
     }
     .container2{
         margin: 0 auto 100px auto;
@@ -280,10 +284,11 @@ body{
         padding: 5px;
     } 
     img{
-        width: 80px;
+        width: 60px;
     }
     #won, #lostgif{
         margin: 100px auto;
+     
     }
    
 }
