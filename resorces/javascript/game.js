@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             lostgif.style.display="block";
             grid3.style.display="none";
         }
-       promptWindowfinal()
+      setTimeout(5000, promptWindowfinal()) 
     }
     function promptWindowfinal() {
       
@@ -640,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         h3.style.marginBottom="10px";
         // Append box to body
         document.body.appendChild(box).className="modal-window";
-        document.body.appendChild(backg).className="modal-fader";
+        //document.body.appendChild(backg).className="modal-fader";
     
       }
     CreateABoard();
