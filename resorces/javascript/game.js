@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         else if(opt1id===opt2id||opt2id===opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
-        
+            alert("You clicked the same card");
           }
         cardsChos = [];
        cardsChosId = [];
@@ -466,6 +466,7 @@ document.addEventListener('DOMContentLoaded', () =>{
           else if(opt1id===opt2id||opt2id===opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
+            alert("You clicked the same card");
         
           }
         cardsChos2 = [];
@@ -535,6 +536,7 @@ document.addEventListener('DOMContentLoaded', () =>{
           else if(opt1id===opt2id||opt2id===opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
+            alert("You clicked the same card");
         
           }
         cardsChos3 = [];
@@ -603,7 +605,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             lostgif.style.display="block";
             grid3.style.display="none";
         }
-      setTimeout(5000, promptWindowfinal()) 
+      setTimeout(10000, promptWindowfinal()) 
     }
     function promptWindowfinal() {
       
