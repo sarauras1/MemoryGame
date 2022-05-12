@@ -325,23 +325,37 @@ document.addEventListener('DOMContentLoaded', () =>{
         var cards = document.querySelectorAll('img')
         const opt1id = cardsChosId[0];
         const opt2id = cardsChosId[1];
+        if(cardsChos.length > 2){
+           
+            console.log("no more then 2")
+            console.log(cardsChos.length)
+          for(let i = 0; i <= cardsChosId.length; i++){
+            cards[i].setAttribute('src','resorces/gameImages/arrow.png')
+          }
+           
+            alert("Do not click more then 2 cards at the time")
+           }
         if(cardsChos[0] === cardsChos[1] && opt1id !== opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt1id].removeEventListener("click", flipCard, false);
             cards[opt2id].removeEventListener("click", flipCard, false);
             cardsWon.push(cardsChos);
+            alert("Congratulation you found a match");
         }else if(cardsChos[0] !== cardsChos[1]){
           cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
           cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
           cardLost.push(cardsChos);
-      
+          alert("You didnt find a match this time");
         }
         else if(opt1id===opt2id||opt2id===opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
+        
             alert("You clicked the same card");
           }
+         
+        
         cardsChos = [];
        cardsChosId = [];
        lose.textContent =`Attempts: ${cardLost.length}`;
@@ -420,6 +434,7 @@ document.addEventListener('DOMContentLoaded', () =>{
           if(cardsChos.length === 2){
               setTimeout(checkformatch, 500);
           }
+
       }
  //level 2 starts here
 //different arrays for different level 
@@ -439,33 +454,46 @@ document.addEventListener('DOMContentLoaded', () =>{
             card.setAttribute('src', 'resorces/gameImages/arrow.png');//set an attribute to the card element
             card.style.border="2px solid white";
             card.setAttribute('data-id-2', i);//set an id, for each card
-           card.addEventListener('click', flipCard2)//add event listener when the image/card is clicked
+            card.addEventListener('click', flipCard2)//add event listener when the image/card is clicked
             grid2.appendChild(card)//this will put the data in the html grid div 
             
         }
     }
+    
     function checkformatch2(){
       
         var cards = document.querySelectorAll('.grid2 img')
         const opt1id = cardsChosId2[0];
         const opt2id = cardsChosId2[1];
+        if(cardsChos.length > 2){
+           
+            console.log("no more then 2")
+            console.log(cardsChos.length)
+          for(let i = 0; i <= cardsChosId.length; i++){
+            cards[i].setAttribute('src','resorces/gameImages/arrow.png')
+          }
+           
+            alert("Do not click more then 2 cards at the time")
+           }
         if(cardsChos2[0] === cardsChos2[1]&& opt1id !== opt2id){ 
             
             cards[opt1id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt1id].removeEventListener("click", flipCard2, false);
             cards[opt2id].removeEventListener("click", flipCard2, false);
-       
+            alert("Congratulation you found a match");
             cardsWon2.push(cardsChos2);
         }  else if(cardsChos2[0] !== cardsChos2[1]){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
+            alert("You didnt find a match this time");
             cardsLost2.push(cardsChos2);
         
           }
           else if(opt1id===opt2id||opt2id===opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
+          
             alert("You clicked the same card");
         
           }
@@ -521,23 +549,38 @@ document.addEventListener('DOMContentLoaded', () =>{
         var cards = document.querySelectorAll('.grid3 img')
         const opt1id = cardsChosId3[0];
         const opt2id = cardsChosId3[1];
+        if(cardsChos.length > 2){
+           
+            console.log("no more then 2")
+            console.log(cardsChos.length)
+          for(let i = 0; i <= cardsChosId.length; i++){
+            cards[i].setAttribute('src','resorces/gameImages/arrow.png')
+          }
+           
+            alert("Do not click more then 2 cards at the time")
+           }
         if(cardsChos3[0] === cardsChos3[1]&& opt1id !== opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/white.png')
             cards[opt1id].removeEventListener("click", flipCard3, false);
             cards[opt2id].removeEventListener("click", flipCard3, false);
             cardsWon3.push(cardsChos3);
+            alert("Congratulation you found a match");
         } else if(cardsChos3[0] !== cardsChos3[1]){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
             cardsLost3.push(cardsChos3);
-        
+            alert("You didnt find a match this time");
           }
           else if(opt1id===opt2id||opt2id===opt2id){
             cards[opt1id].setAttribute('src','resorces/gameImages/arrow.png')
             cards[opt2id].setAttribute('src','resorces/gameImages/arrow.png')
             alert("You clicked the same card");
         
+          }
+          else if(cardsChos3.length === 2){
+                 cards[opt1id].removeEventListener("click", flipCard3, false);
+            cards[opt2id].removeEventListener("click", flipCard3, false);
           }
         cardsChos3 = [];
        cardsChosId3 = [];
